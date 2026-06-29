@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Светлана Кулакова · Middle QA Engineer</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <!-- ===== НАВИГАЦИОННЫЕ ТОЧКИ ===== -->
+    <nav class="nav-dots" id="navDots" aria-label="Навигация по секциям">
+    </nav>
+    
+    <!-- ===== КАСТОМНЫЙ СКРОЛЛБАР СЛЕВА ===== -->
+    <div class="custom-scroll" id="customScroll">
+        <div class="custom-scroll-track">
+            <div class="custom-scroll-thumb" id="scrollThumb"></div>
+        </div>
+    </div>
+
+<!-- =============================================================
+    HERO — ЖИДКОЕ СТЕКЛО
+    ============================================================ -->
+    <section class="hero" id="hero">
+        <div class="hero-glass" id="heroGlass">
+            <div class="glass-blob blob-1"></div>
+            <div class="glass-blob blob-2"></div>
+            <div class="glass-blob blob-3"></div>
+            <div class="glass-blob blob-4"></div>
+            <div class="glass-blob blob-5"></div>
+            <div class="glass-blob blob-6"></div>
+            <div class="glass-blob blob-7"></div>
+        </div>
+
+        <!-- ===== ПЕРЕКЛЮЧАТЕЛИ ===== -->
+        <div class="hero-controls">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+                <span class="lang-active">RU</span>
+                <span class="lang-slash">/</span>
+                <span class="lang-inactive">EN</span>
+            </button>
+            <button class="burger-menu" id="burgerMenu" aria-label="Toggle navigation">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+        </div>
+
+        <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
+        <div class="hero-content">
+            <div class="hero-avatar">
+                <img src="img/svetlana.jpg" alt="Светлана Кулакова"/>
+            </div>
+            <div class="hero-badge">
+                <span>✤ Middle QA Engineer · <span id="experienceYears">3+</span>
+                <span data-en="years of experience" data-ru="лет опыта">лет опыта</span>
+                <span class="status-badge green">
+                    <span class="status-dot"></span>
+                    <span data-en="Active" data-ru="Активно">Активно</span>
+                </span>
+            </div>
+            <h1>
+                <span data-en="Svetlana Kulakova" data-ru="Светлана Кулакова">Светлана Кулакова</span>
+            </h1>
+            <p class="hero-subtitle" data-en="QA Engineer · Manual Testing" data-ru="QA Engineer · Ручное тестирование">QA Engineer · Ручное тестирование</p>
+            <div class="hero-tags">
+                <span data-en="#APITesting" data-ru="#APITesting">#APITesting</span>
+                <span data-en="#BankingSoftware" data-ru="#БанковскоеПО">#БанковскоеПО</span>
+                <span data-en="#SQL" data-ru="#SQL">#SQL</span>
+                <span data-en="#Agile" data-ru="#Agile">#Agile</span>
+            </div>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                    <span data-en="Contact" data-ru="Связаться">Связаться</span>
+                </a>
+                <a href="#experience" class="btn btn-outline">
+                    <i class="fas fa-chevron-down"></i>
+                    <span data-en="Experience" data-ru="Опыт">Опыт</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <span data-en="Scroll" data-ru="Листай">Листай</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <main>
+        <!-- ===== ОБО МНЕ ===== -->
+        <section class="section fade-section" id="about">
+            <div class="container">
+                <h2><i class="fas fa-user-check"></i> <span data-en="About Me" data-ru="Обо мне">Обо мне</span></h2>
+                <div class="about-grid">
+                    <div>
+                        <p style="font-size: 17px; line-height: 1.8; color: var(--text);">
+                            <span data-en="QA Engineer with" data-ru="QA Engineer с">QA Engineer с</span>
+                            <strong><span id="aboutExperienceYears">3</span>+</strong>
+                            <span data-en="years of experience in testing banking software and payment systems (WAY4, Solar, payment functionality)." data-ru="годами опыта в тестировании банковского ПО и платежных систем (WAY4, Solar, платежный функционал).">годами опыта в тестировании банковского ПО и платежных систем (WAY4, Solar, платежный функционал).</span>
+                        </p>
+                        <p style="font-size: 15px; line-height: 1.7; color: var(--text-secondary); margin-top: 12px;">
+                            <span data-en="I specialize in API testing, database work, and CI/CD pipeline analysis. I have experience building testing processes from scratch and optimizing regression testing." data-ru="Специализируюсь на тестировании API, работе с базами данных и анализе CI/CD pipeline. Имею опыт построения процессов тестирования с нуля и оптимизации регрессионного тестирования.">Специализируюсь на тестировании API, работе с базами данных и анализе CI/CD pipeline. Имею опыт построения процессов тестирования с нуля и оптимизации регрессионного тестирования.</span>
+                        </p>
+                        <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px;">
+                            <span class="tag-accent">✦ <span data-en="Goal: Middle/Senior QA position" data-ru="Цель: позиция Middle/Senior QA">Цель: позиция Middle/Senior QA</span></span>
+                            <span class="tag-soft">◈ <span data-en="Ready to improve software quality" data-ru="Готовa усилить качество ПО">Готовa усилить качество ПО</span></span>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat"><span class="stat-number" id="statExperience">3+</span><span class="stat-label" data-en="years experience" data-ru="лет опыта">лет опыта</span></div>
+                        <div class="stat"><span class="stat-number">15%</span><span class="stat-label" data-en="regression speedup" data-ru="ускорение регресса">ускорение регресса</span></div>
+                        <div class="stat"><span class="stat-number">5+</span><span class="stat-label" data-en="QA engineers mentored" data-ru="QA-инженеров онбордила">QA-инженеров онбордила</span></div>
+                        <div class="stat"><span class="stat-number">2</span><span class="stat-label" data-en="commercial projects" data-ru="коммерческих проекта">коммерческих проекта</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== КЛЮЧЕВЫЕ НАВЫКИ ===== -->
+        <section class="section fade-section" id="skills" style="background: var(--bg-alt);">
+            <div class="container">
+                <h2><i class="fas fa-tasks"></i> <span data-en="Key Skills" data-ru="Ключевые навыки">Ключевые навыки</span></h2>
+                
+                <!-- Тестирование -->
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <span class="skill-category-icon"><i class="fas fa-vial"></i></span>
+                        <span class="skill-category-title" data-en="Testing" data-ru="Тестирование">Тестирование</span>
+                        <span class="skill-category-badge" data-en="Core" data-ru="Core">Core</span>
+                    </div>
+                    <div class="skills-grid">
+                        <span class="skill highlight">
+                            <span data-en="API Testing" data-ru="API тестирование">API тестирование</span>
+                            <span class="skill-meta">(Postman, Swagger)</span>
+                        </span>
+                        <span class="skill highlight">
+                            <span data-en="Functional Testing" data-ru="Функциональное тестирование">Функциональное тестирование</span>
+                        </span>
+                        <span class="skill highlight">
+                            <span data-en="Integration Testing" data-ru="Интеграционное тестирование">Интеграционное тестирование</span>
+                        </span>
+                        <span class="skill">
+                            <span data-en="Regression Testing" data-ru="Регрессионное тестирование">Регрессионное тестирование</span>
+                        </span>
+                        <span class="skill">
+                            <span data-en="Smoke Testing" data-ru="Smoke тестирование">Smoke тестирование</span>
+                        </span>
+                        <span class="skill">
+                            <span data-en="E2E Testing" data-ru="Сквозное тестирование">Сквозное тестирование</span>
+                        </span>
+                        <span class="skill">
+                            <span data-en="UI Testing" data-ru="UI тестирование">UI тестирование</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Базы данных -->
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <span class="skill-category-icon"><i class="fas fa-database"></i></span>
+                        <span class="skill-category-title" data-en="Databases" data-ru="Базы данных">Базы данных</span>
+                        <span class="skill-category-badge" data-en="Expert" data-ru="Expert">Expert</span>
+                    </div>
+                    <div class="skills-grid">
+                        <span class="skill highlight">
+                            <span>PostgreSQL</span>
+                            <span class="skill-meta">(SELECT, JOIN, UPDATE, DELETE)</span>
+                        </span>
+                        <span class="skill highlight">
+                            <span>Oracle</span>
+                            <span class="skill-meta">(JOIN, stored procedures)</span>
+                        </span>
+                        <span class="skill">
+                            <span>MS SQL</span>
+                        </span>
+                        <span class="skill">
+                            <span>MySQL</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- CI/CD и инструменты -->
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <span class="skill-category-icon"><i class="fas fa-cogs"></i></span>
+                        <span class="skill-category-title" data-en="CI/CD & Tools" data-ru="CI/CD и инструменты">CI/CD и инструменты</span>
+                        <span class="skill-category-badge" data-en="Expert" data-ru="Expert">Expert</span>
+                    </div>
+                    <div class="skills-grid">
+                        <span class="skill highlight">
+                            <span>GitLab CI</span>
+                        </span>
+                        <span class="skill highlight">
+                            <span>ArgoCD</span>
+                        </span>
+                        <span class="skill">
+                            <span>Git</span>
+                            <span class="skill-meta">(branch, merge)</span>
+                        </span>
+                        <span class="skill">
+                            <span>Docker</span>
+                        </span>
+                        <span class="skill">
+                            <span>Kibana</span>
+                            <span class="skill-meta" data-en="log analysis" data-ru="анализ логов">анализ логов</span>
+                        </span>
+                        <span class="skill">
+                            <span>DevTools</span>
+                        </span>
+                        <span class="skill">
+                            <span>WireMock</span>
+                        </span>
+                        <span class="skill">
+                            <span>Redis</span>
+                        </span>
+                        <span class="skill">
+                            <span>RabbitMQ</span>
+                        </span>
+                        <span class="skill">
+                            <span>Apache Kafka</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Управление и процессы -->
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <span class="skill-category-icon"><i class="fas fa-project-diagram"></i></span>
+                        <span class="skill-category-title" data-en="Management & Processes" data-ru="Управление и процессы">Управление и процессы</span>
+                        <span class="skill-category-badge" data-en="Core" data-ru="Core">Core</span>
+                    </div>
+                    <div class="skills-grid">
+                        <span class="skill highlight">
+                            <span data-en="Test Documentation" data-ru="Тестовая документация">Тестовая документация</span>
+                            <span class="skill-meta">(TestRail, Confluence)</span>
+                        </span>
+                        <span class="skill highlight">
+                            <span data-en="Bug Tracking" data-ru="Баг-трекинг">Баг-трекинг</span>
+                            <span class="skill-meta">(Jira, Youtrack, ioCase)</span>
+                        </span>
+                        <span class="skill">
+                            <span data-en="Agile / Scrum" data-ru="Agile / Scrum">Agile / Scrum</span>
+                        </span>
+                        <span class="skill">
+                            <span data-en="Kanban" data-ru="Kanban">Kanban</span>
+                        </span>
+                        <span class="skill">
+                            <span data-en="Mentoring" data-ru="Менторство">Менторство</span>
+                        </span>
+                        <span class="skill">
+                            <span data-en="Onboarding" data-ru="Онбординг">Онбординг</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Специализированные инструменты -->
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <span class="skill-category-icon"><i class="fas fa-tools"></i></span>
+                        <span class="skill-category-title" data-en="Specialized Tools" data-ru="Специализированные инструменты">Специализированные инструменты</span>
+                        <span class="skill-category-badge" data-en="Domain" data-ru="Domain">Domain</span>
+                    </div>
+                    <div class="skills-grid">
+                        <span class="skill">
+                            <span>WAY4</span>
+                        </span>
+                        <span class="skill">
+                            <span>Solar Testing Toolkit (STT)</span>
+                        </span>
+                        <span class="skill">
+                            <span>Product Inspector (PI)</span>
+                        </span>
+                        <span class="skill">
+                            <span>1C:Enterprise</span>
+                        </span>
+                        <span class="skill">
+                            <span>SoapUI</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ОПЫТ РАБОТЫ ===== -->
+        <section class="section fade-section" id="experience">
+            <div class="container">
+                <h2><i class="fas fa-briefcase"></i> <span data-en="Work Experience" data-ru="Опыт работы">Опыт работы</span></h2>
+                
+                <div class="experience-accordion">
+                    <!-- Simbirsoft -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="true">
+                            <div class="accordion-header-left">
+                                <span class="accordion-company">Simbirsoft</span>
+                                <span class="accordion-role" data-en="Senior QA Engineer" data-ru="Старший специалист по тестированию">Старший специалист по тестированию</span>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="accordion-period" data-en="Aug 2024 — Present" data-ru="Авг 2024 — н.в.">Авг 2024 — н.в.</span>
+                                <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                        </button>
+                        <div class="accordion-body open">
+                            <div class="exp-projects">
+                                <!-- Проект 1 -->
+                                <div class="project-card">
+                                    <div class="project-title">
+                                        <i class="fas fa-project-diagram"></i>
+                                        <span data-en="Payment System Testing" data-ru="Тестирование платежного функционала">Тестирование платежного функционала</span>
+                                        <span class="project-badge" data-en="Current" data-ru="Текущий">Текущий</span>
+                                    </div>
+                                    <div class="project-tech">
+                                        <span>Postman</span>
+                                        <span>Swagger</span>
+                                        <span>PostgreSQL</span>
+                                        <span>Kibana</span>
+                                        <span>GitLab CI</span>
+                                        <span>ArgoCD</span>
+                                        <span>WireMock</span>
+                                        <span>Redis</span>
+                                        <span>RabbitMQ</span>
+                                        <span>Jira</span>
+                                        <span>TestRail</span>
+                                    </div>
+                                    <div class="project-desc" data-en="Comprehensive testing of bank payment functionality with parallel verification of both frontend interface and backend logic." data-ru="Комплексное тестирование платежного функционала банка с параллельной верификацией как фронтенд-интерфейса, так и бэкенд-логики.">
+                                        Комплексное тестирование платежного функционала банка с параллельной верификацией как фронтенд-интерфейса, так и бэкенд-логики.
+                                    </div>
+                                    
+                                    <div class="project-section-title">
+                                        <i class="fas fa-trophy"></i>
+                                        <span data-en="Key Achievements" data-ru="Ключевые достижения">Ключевые достижения</span>
+                                    </div>
+                                    <ul class="exp-list">
+                                        <li><span class="exp-achievement">15%</span> <span data-en="Reduced regression time (down to 2 days) through test case optimization" data-ru="Сократила время регресса на 15% (до 2 дней) за счет оптимизации тест-кейсов">Сократила время регресса на 15% (до 2 дней) за счет оптимизации тест-кейсов</span></li>
+                                        <li><span data-en="Organized testing process from scratch: documentation templates, defect management processes, onboarding" data-ru="Организовала процесс тестирования с нуля: шаблоны документации, процессы заведения/приемки дефектов, онбординг">Организовала процесс тестирования с нуля: шаблоны документации, процессы заведения/приемки дефектов, онбординг</span></li>
+                                        <li><span data-en="Managed tasks for 3+ QA engineers in the stream" data-ru="Распределяла задачи между 3+ QA-инженерами в стриме">Распределяла задачи между 3+ QA-инженерами в стриме</span></li>
+                                    </ul>
+
+                                    <div class="project-section-title">
+                                        <i class="fas fa-list"></i>
+                                        <span data-en="Responsibilities" data-ru="Обязанности">Обязанности</span>
+                                    </div>
+                                    <ul class="exp-list">
+                                        <li><span data-en="Functional, integration, regression, smoke, API testing of payment functionality" data-ru="Функциональное, интеграционное, регрессионное, smoke, API тестирование платежного функционала">Функциональное, интеграционное, регрессионное, smoke, API тестирование платежного функционала</span></li>
+                                        <li><span data-en="API testing: Postman, Swagger, WireMock stub configuration" data-ru="Тестирование API: Postman, Swagger, настройка заглушек в WireMock">Тестирование API: Postman, Swagger, настройка заглушек в WireMock</span></li>
+                                        <li><span data-en="Database work (PostgreSQL): SELECT, JOIN, UPDATE, DELETE queries" data-ru="Работа с БД PostgreSQL: запросы (SELECT, JOIN, UPDATE, DELETE)">Работа с БД PostgreSQL: запросы (SELECT, JOIN, UPDATE, DELETE)</span></li>
+                                        <li><span data-en="Log analysis in Kibana, defect localization" data-ru="Анализ логов в Kibana, локализация дефектов">Анализ логов в Kibana, локализация дефектов</span></li>
+                                        <li><span data-en="CI/CD: GitLab CI, ArgoCD, pipeline analysis, Git work (branch, merge)" data-ru="CI/CD: GitLab CI, ArgoCD, анализ pipeline, работа с Git (branch, merge)">CI/CD: GitLab CI, ArgoCD, анализ pipeline, работа с Git (branch, merge)</span></li>
+                                        <li><span data-en="Collaboration with DevOps, APSEC (security), SRE" data-ru="Взаимодействие с DevOps, APSEC (безопасность), SRE">Взаимодействие с DevOps, APSEC (безопасность), SRE</span></li>
+                                        <li><span data-en="Conducting Scrum activities: daily, retrospective, demo, grooming" data-ru="Проведение Scrum-активностей: daily, retrospective, demo, grooming">Проведение Scrum-активностей: daily, retrospective, demo, grooming</span></li>
+                                        <li><span data-en="Test documentation in TestRail and tasks in Jira: bug reports (full lifecycle), time tracking, testing reports" data-ru="Ведение тестовой документации в TestRail и задач в Jira: баг-репорты (полный lifecycle), учёт трудозатрат, подготовка отчётности">Ведение тестовой документации в TestRail и задач в Jira: баг-репорты (полный lifecycle), учёт трудозатрат, подготовка отчётности</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Проект 2 -->
+                                <div class="project-card">
+                                    <div class="project-title">
+                                        <i class="fas fa-project-diagram"></i>
+                                        <span data-en="WAY4 to Solar Migration" data-ru="Миграция с WAY4 на Solar">Миграция с WAY4 на Solar</span>
+                                        <span class="project-badge" data-en="Completed" data-ru="Завершен">Завершен</span>
+                                    </div>
+                                    <div class="project-tech">
+                                        <span>WAY4</span>
+                                        <span>Air-Solar</span>
+                                        <span>STT</span>
+                                        <span>Oracle</span>
+                                        <span>SoapUI</span>
+                                        <span>Kafka</span>
+                                        <span>TestRail</span>
+                                        <span>Confluence</span>
+                                    </div>
+                                    <div class="project-desc" data-en="Implementation of a project to migrate the bank's processing system from WAY4 to a domestic solution (Solar), providing a full cycle of payment operations processing." data-ru="Реализация проекта по миграции банковской процессинговой системы с платформы WAY4 на отечественное решение Solar, обеспечивающего полный цикл обработки платежных операций.">
+                                        Реализация проекта по миграции банковской процессинговой системы с платформы WAY4 на отечественное решение Solar, обеспечивающего полный цикл обработки платежных операций.
+                                    </div>
+                                    
+                                    <div class="project-section-title">
+                                        <i class="fas fa-list"></i>
+                                        <span data-en="Responsibilities" data-ru="Обязанности">Обязанности</span>
+                                    </div>
+                                    <ul class="exp-list">
+                                        <li><span data-en="Testing payment system migration from WAY4 to Solar (full payment processing cycle)" data-ru="Тестирование миграции платежной системы с WAY4 на Solar (полный цикл обработки платежей)">Тестирование миграции платежной системы с WAY4 на Solar (полный цикл обработки платежей)</span></li>
+                                        <li><span data-en="Functional, regression, smoke, E2E, integration, acceptance testing" data-ru="Функциональное, регрессионное, smoke, сквозное, интеграционное, приемочное тестирование">Функциональное, регрессионное, smoke, сквозное, интеграционное, приемочное тестирование</span></li>
+                                        <li><span data-en="Test case automation in Solar Testing Toolkit (STT): emulation of scenarios via POS and Ecom" data-ru="Автоматизация тест-кейсов в Solar Testing Toolkit (STT): эмуляция сценариев через POS и Ecom">Автоматизация тест-кейсов в Solar Testing Toolkit (STT): эмуляция сценариев через POS и Ecom</span></li>
+                                        <li><span data-en="Database work (Oracle): queries, JOINs, stored procedure execution" data-ru="Работа с БД Oracle: запросы, JOIN, запуск хранимых процедур">Работа с БД Oracle: запросы, JOIN, запуск хранимых процедур</span></li>
+                                        <li><span data-en="Log analysis, data collection and verification" data-ru="Анализ логов, сбор и верификация данных">Анализ логов, сбор и верификация данных</span></li>
+                                        <li><span data-en="Documentation: test plans, checklists, test case libraries" data-ru="Ведение документации: тест-планы, чек-листы, библиотеки тест-кейсов">Ведение документации: тест-планы, чек-листы, библиотеки тест-кейсов</span></li>
+                                        <li><span data-en="Kanban activities: daily, PBR, retrospective" data-ru="Kanban-активности: daily, PBR, retrospective">Kanban-активности: daily, PBR, retrospective</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- РН-Учет -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <div class="accordion-header-left">
+                                <span class="accordion-company">ООО РН-Учет</span>
+                                <span class="accordion-role" data-en="QA Specialist" data-ru="Специалист">Специалист</span>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="accordion-period" data-en="Sep 2023 — Jul 2024" data-ru="Сен 2023 — Июл 2024">Сен 2023 — Июл 2024</span>
+                                <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="exp-projects">
+                                <div class="project-card">
+                                    <div class="project-title">
+                                        <i class="fas fa-project-diagram"></i>
+                                        <span data-en="1C:Enterprise Testing" data-ru="Тестирование 1С:Предприятие">Тестирование 1С:Предприятие</span>
+                                    </div>
+                                    <div class="project-tech">
+                                        <span>1C:Enterprise</span>
+                                        <span>Postman</span>
+                                        <span>ioCase</span>
+                                        <span>Youtrack</span>
+                                    </div>
+                                    
+                                    <div class="project-section-title">
+                                        <i class="fas fa-list"></i>
+                                        <span data-en="Responsibilities" data-ru="Обязанности">Обязанности</span>
+                                    </div>
+                                    <ul class="exp-list">
+                                        <li><span data-en="Functional, smoke, E2E, and integration testing on 1C:Enterprise platform" data-ru="Проведение функционального, smoke, сквозного и интеграционного тестирования на платформе 1С:Предприятие">Проведение функционального, smoke, сквозного и интеграционного тестирования на платформе 1С:Предприятие</span></li>
+                                        <li><span data-en="Scrum activities: daily, retro, demo, backlog grooming" data-ru="Проведение активностей по Scrum (daily, retro, demo, backlog grooming)">Проведение активностей по Scrum (daily, retro, demo, backlog grooming)</span></li>
+                                        <li><span data-en="Analysis and review of technical and project documentation" data-ru="Анализ и ревью технической, проектной документации">Анализ и ревью технической, проектной документации</span></li>
+                                        <li><span data-en="Development, updating, review and control of test documentation (test plans, checklists, test case libraries)" data-ru="Разработка, актуализация, ревью и контроль тестовой документации (тест-планы, чек-листы, библиотеки тест-кейсов)">Разработка, актуализация, ревью и контроль тестовой документации (тест-планы, чек-листы, библиотеки тест-кейсов)</span></li>
+                                        <li><span data-en="Bug tracking and interaction with development team" data-ru="Заведение ошибок в системах баг-трекинга и взаимодействие с отделом разработки">Заведение ошибок в системах баг-трекинга и взаимодействие с отделом разработки</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ОБРАЗОВАНИЕ ===== -->
+        <section class="section fade-section" id="education" style="background: var(--bg-alt);">
+            <div class="container">
+                <h2><i class="fas fa-graduation-cap"></i> <span data-en="Education" data-ru="Образование">Образование</span></h2>
+                <div class="edu-grid">
+                    <div class="edu-item">
+                        <div class="edu-degree">
+                            <span data-en="Master's Degree" data-ru="Магистр">Магистр</span>
+                            <span class="edu-year">2020</span>
+                        </div>
+                        <div class="edu-uni" data-en="SSEU (Samara State University of Economics)" data-ru="ФГБОУ ВО СГЭУ">ФГБОУ ВО СГЭУ</div>
+                        <div class="edu-spec" data-en="Regional Management and Municipal Management (with honors)" data-ru="Региональное управление и муниципальный менеджмент (с отличием)">Региональное управление и муниципальный менеджмент (с отличием)</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-degree">
+                            <span data-en="Bachelor's Degree" data-ru="Бакалавр">Бакалавр</span>
+                            <span class="edu-year">2018</span>
+                        </div>
+                        <div class="edu-uni" data-en="SSEU (Samara State University of Economics)" data-ru="ФГБОУ ВО СГЭУ">ФГБОУ ВО СГЭУ</div>
+                        <div class="edu-spec" data-en="Management (with honors)" data-ru="Менеджмент (с отличием)">Менеджмент (с отличием)</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-degree">
+                            <span data-en="Professional Development" data-ru="Повышение квалификации">Повышение квалификации</span>
+                            <span class="edu-year">2022</span>
+                        </div>
+                        <div class="edu-uni" data-en="Tomsk State University" data-ru="Национальный исследовательский Томский государственный университет">Национальный исследовательский Томский государственный университет</div>
+                        <div class="edu-spec" data-en="Software Tester, 'Alphabet of Digital'" data-ru="Тестировщик программного обеспечения, 'Азбука цифры'">Тестировщик программного обеспечения, 'Азбука цифры'</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== КОНТАКТЫ ===== -->
+        <section class="section fade-section" id="contact">
+            <div class="container">
+                <h2><i class="fas fa-paper-plane"></i> <span data-en="Contact" data-ru="Контакты">Контакты</span></h2>
+                
+                <p class="contact-intro" data-en="Feel free to reach out in any convenient way." data-ru="Свяжитесь со мной любым удобным способом.">
+                    Свяжитесь со мной любым удобным способом.
+                </p>
+                
+                <div class="contact-grid">
+                    <!-- Email -->
+                    <a href="mailto:svetik030497@yandex.ru" class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <span class="contact-card-label">Email</span>
+                            <span class="contact-card-value">svetik030497@yandex.ru</span>
+                            <span class="contact-card-badge" data-en="Preferred" data-ru="Предпочтительный">Предпочтительный</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Phone -->
+                    <a href="tel:+79379855245" class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <span class="contact-card-label" data-en="Phone" data-ru="Телефон">Телефон</span>
+                            <span class="contact-card-value">+7 (937) 985-52-45</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Telegram -->
+                    <a href="https://t.me/svetlana_kulakova" target="_blank" class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <span class="contact-card-label">Telegram</span>
+                            <span class="contact-card-value">@svetlana_kulakova</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Location -->
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <span class="contact-card-label" data-en="Location" data-ru="Локация">Локация</span>
+                            <span class="contact-card-value" data-en="Samara, Russia · Remote" data-ru="Самара, Россия · Удаленно">Самара, Россия · Удаленно</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-name">Светлана Кулакова</span>
+                <span class="footer-title">QA Engineer · <span id="footerExperience">3</span>+ <span data-en="years" data-ru="лет">лет</span></span>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:svetik030497@yandex.ru" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://t.me/svetlana_kulakova" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2026 Светлана Кулакова. <span data-en="All rights reserved." data-ru="Все права защищены.">Все права защищены.</span></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+
+    <div class="cookie-banner it-style" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-icon">
+                <i class="fas fa-code"></i>
+                <span class="cookie-badge">v1.0</span>
+            </div>
+            <div class="cookie-text">
+                <div class="cookie-title">
+                    <span data-en="Cookie cookie" data-ru="Куки cookie">Куки cookie</span>
+                    <span class="cookie-status">
+                        <span class="status-dot"></span>
+                        <span data-en="Active" data-ru="Активно">Активно</span>
+                    </span>
+                </div>
+                <p data-en="We use cookies to store your theme preferences. This data is stored locally in your browser and is not transmitted anywhere." data-ru="Мы используем куки для хранения ваших предпочтений темы. Эти данные хранятся локально в вашем браузере и никуда не передаются.">
+                    Мы используем куки для хранения ваших предпочтений темы. Эти данные хранятся локально в вашем браузере и никуда не передаются.
+                </p>
+                <div class="cookie-tech">
+                    <span><i class="fas fa-database"></i> localStorage</span>
+                    <span><i class="fas fa-lock"></i> <span data-en="Not transmitted" data-ru="Не передается">Не передается</span></span>
+                    <span><i class="fas fa-clock"></i> <span data-en="Until manual deletion" data-ru="До ручного удаления">До ручного удаления</span></span>
+                </div>
+            </div>
+            <div class="cookie-actions">
+                <button class="cookie-details" id="cookieDetails">
+                    <i class="fas fa-code"></i>
+                    <span data-en="Details" data-ru="Подробнее">Подробнее</span>
+                </button>
+                <button class="cookie-accept" id="cookieAccept">
+                    <i class="fas fa-check-circle"></i>
+                    <span data-en="Accept" data-ru="Принять">Принять</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
