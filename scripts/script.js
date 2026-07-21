@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
   elements.forEach(el => {
     el.innerHTML = el.getAttribute(`data-${lang}`);  // ✅ Стало
   });
-
     // Обновляем кнопку языка
     if (lang === 'ru') {
       langActive.textContent = 'RU';
