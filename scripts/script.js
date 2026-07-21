@@ -48,23 +48,29 @@ document.addEventListener('DOMContentLoaded', () => {
   function setLanguage(lang) {
   const elements = document.querySelectorAll('[data-ru][data-en]');
   elements.forEach(el => {
-    el.innerHTML = el.getAttribute(`data-${lang}`);  // ✅ Стало
-  });
-    // Обновляем кнопку языка
-    if (lang === 'ru') {
-      langActive.textContent = 'RU';
-      langInactive.textContent = 'EN';
-    } else {
-      langActive.textContent = 'EN';
-      langInactive.textContent = 'RU';
-    }
+    // Автоматически заменяем &lt; на < и &gt; на >
+    const htmlContent = el.getAttribute(`data-${lang}`)
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&amp;/g, '&');
     
-    // Меняем активный класс для стилизации
-    langActive.classList.add('lang-active');
-    langInactive.classList.remove('lang-active');
-    langInactive.classList.add('lang-inactive');
-  }
+    el.innerHTML = htmlContent;
+  });
 
+  // Обновляем кнопку языка
+  if (lang === 'ru') {
+    langActive.textContent = 'RU';
+    langInactive.textContent = 'EN';
+  } else {
+    langActive.textContent = 'EN';
+    langInactive.textContent = 'RU';
+  }
+  
+  // Меняем активный класс для стилизации
+  langActive.classList.add('lang-active');
+  langInactive.classList.remove('lang-active');
+  langInactive.classList.add('lang-inactive');
+}
   // =========================================
   // 3. Burger Menu (Бургер-меню)
   // =========================================
