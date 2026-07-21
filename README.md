@@ -1,64 +1,45 @@
-# -digital-resume
-## 🎯 Ключевые навыки
+# 🚀 Цифровое резюме · Светлана Кулакова
 
-### Тестирование
-- API Testing (Postman, Swagger, REST)
-- Functional / Integration / Regression / E2E Testing
-- UI Testing
+**Middle QA Engineer · 3+ года опыта в тестировании банковского ПО и платежных систем**
 
-### Базы данных
-- PostgreSQL, Oracle, MS SQL, MySQL
-- JOIN, хранимые процедуры
+[![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/ru/docs/Web/HTML)
+[![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/ru/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/ru/docs/Web/JavaScript)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=github&logoColor=white)](https://pages.github.com/)
 
-### CI/CD и инструменты
-- GitLab CI, ArgoCD
-- Git, Docker
-- Kibana (анализ логов)
-- WireMock, Redis, RabbitMQ, Apache Kafka
+---
 
-### Управление и процессы
-- Test Documentation (TestRail, Confluence)
-- Bug Tracking (Jira, Youtrack, ioCase)
-- Agile / Scrum / Kanban
-- Mentoring & Onboarding
+## 🌐 Живая демонстрация (Live Demo)
 
-### AI-инструменты
-- ChatGPT, DeepSeek, Gemini, GigaChat
+Сайт развернут и доступен по ссылке:  
+👉 **[sveta030497kudr-cloud.github.io/-digital-resume](https://sveta030497kudr-cloud.github.io/-digital-resume/)**
 
-## 📊 Достижения
+---
 
-- ✅ Сократила время регресса на **15%** (с 3 до 2 дней)
-- ✅ Организовала процесс тестирования с нуля
-- ✅ Провела менторство и онбординг **5+** QA-инженеров
+## ✨ Основные возможности
 
-## 💼 Опыт работы
+* 🌗 **Темная и светлая тема** с сохранением выбора в `localStorage`.
+* 🌍 **Двуязычный интерфейс (RU / EN)** с мгновенным переключением.
+*  **Полная адаптивность** под мобильные устройства, планшеты и десктопы.
+* 🍔 **Удобное бургер-меню** для навигации по разделам на мобильных устройствах.
+*  **Современный UI/UX**: Glassmorphism, плавные анимации при скролле, кастомный скроллбар.
+* 📂 **Структурированный опыт**: Аккордеон с детализацией 3 коммерческих проектов (Финтех, Платежи, Импортозамещение).
 
-### Simbirsoft (Авг 2024 — н.в.)
-**Старший специалист по тестированию**
-- Тестирование платежного функционала банка
-- Миграция с WAY4 на Solar
-- Работа с PostgreSQL, Oracle, Kafka
+---
 
-### ООО РН-Учет (Сен 2023 — Июл 2024)
-**Специалист**
-- Тестирование 1С:Предприятие
-- Scrum-активности
+## 🛠 Технологический стек
 
-## 🎓 Образование
+* **Разметка и стили:** HTML5, CSS3 (CSS Variables, Flexbox, Grid, Media Queries).
+* **Логика:** Vanilla JavaScript (ES6+).
+* **Иконки:** Font Awesome 6.
+* **Хостинг:** GitHub Pages.
 
-- **Магистр** — СГЭУ (2020)
-- **Бакалавр** — СГЭУ (2018)
-- **Курсы** — Тестировщик ПО, Томский государственный университет (2022)
+---
 
-## 📬 Контакты
+## 💻 Локальный запуск
 
-- **Email:** [svetik030497@yandex.ru](mailto:svetik030497@yandex.ru)
-- **Телефон:** +7 (937) 985-52-45
-- **Telegram:** [@svetlana_kulakova](https://t.me/svetlana_kulakova)
-- **Локация:** Самара, Россия (удалённо)
+Если вы хотите запустить проект локально или внести изменения:
 
-## 🛠️ Локальный запуск
-
-1. Клонируйте репозиторий:
-```bash
-git clone https://github.com/ваш-логин/digital-resume.git
+1. **Клонируйте репозиторий:**
+   ```bash
+   git clone https://github.com/sveta030497kudr-cloud/-digital-resume.git
