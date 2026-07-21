@@ -1,253 +1,183 @@
-// ===== ПЕРЕКЛЮЧЕНИЕ ТЕМЫ =====
-const themeToggle = document.getElementById('themeToggle');
-const themeIcon = themeToggle.querySelector('i');
+document.addEventListener('DOMContentLoaded', () => {
+  // =========================================
+  // 1. Theme Toggle (Темная/Светлая тема)
+  // =========================================
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = themeToggle.querySelector('i');
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
 
-// Загрузка сохраненной темы
-const savedTheme = localStorage.getItem('theme') || 'dark';
-document.documentElement.setAttribute('data-theme', savedTheme);
-updateThemeIcon(savedTheme);
-
-themeToggle.addEventListener('click', () => {
+  themeToggle.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
-});
+  });
 
-function updateThemeIcon(theme) {
-    if (theme === 'light') {
-        themeIcon.className = 'fas fa-sun';
+  function updateThemeIcon(theme) {
+    if (theme === 'dark') {
+      themeIcon.classList.remove('fa-sun');
+      themeIcon.classList.add('fa-moon');
     } else {
-        themeIcon.className = 'fas fa-moon';
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
     }
-}
+  }
 
-// ===== ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА =====
-const langToggle = document.getElementById('langToggle');
-const langActive = langToggle.querySelector('.lang-active');
-const langInactive = langToggle.querySelector('.lang-inactive');
+  // =========================================
+  // 2. Language Toggle (RU / EN)
+  // =========================================
+  const langToggle = document.getElementById('langToggle');
+  const langActive = langToggle.querySelector('.lang-active');
+  const langInactive = langToggle.querySelector('.lang-inactive');
+  const savedLang = localStorage.getItem('lang') || 'ru';
 
-let currentLang = localStorage.getItem('lang') || 'ru';
-updateLanguage(currentLang);
+  setLanguage(savedLang);
 
-langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'ru' ? 'en' : 'ru';
-    localStorage.setItem('lang', currentLang);
-    updateLanguage(currentLang);
-});
+  langToggle.addEventListener('click', () => {
+    const currentLang = langActive.textContent.toLowerCase();
+    const newLang = currentLang === 'ru' ? 'en' : 'ru';
+    setLanguage(newLang);
+    localStorage.setItem('lang', newLang);
+  });
 
-function updateLanguage(lang) {
-    if (lang === 'en') {
-        langActive.textContent = 'EN';
-        langInactive.textContent = 'RU';
+  function setLanguage(lang) {
+    const elements = document.querySelectorAll('[data-ru][data-en]');
+    elements.forEach(el => {
+      el.textContent = el.getAttribute(`data-${lang}`);
+    });
+
+    // Обновляем кнопку языка
+    if (lang === 'ru') {
+      langActive.textContent = 'RU';
+      langInactive.textContent = 'EN';
     } else {
-        langActive.textContent = 'RU';
-        langInactive.textContent = 'EN';
+      langActive.textContent = 'EN';
+      langInactive.textContent = 'RU';
     }
     
-    // Обновление всех элементов с data-ru и data-en
-    document.querySelectorAll('[data-ru][data-en]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
-    });
-}
+    // Меняем активный класс для стилизации
+    langActive.classList.add('lang-active');
+    langInactive.classList.remove('lang-active');
+    langInactive.classList.add('lang-inactive');
+  }
 
-// ===== АНИМАЦИИ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ =====
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
+  // =========================================
+  // 3. Burger Menu (Бургер-меню)
+  // =========================================
+  const burgerMenu = document.getElementById('burgerMenu');
+  const burgerDropdown = document.getElementById('burgerDropdown');
+  const burgerLinks = document.querySelectorAll('.burger-nav-item');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
+  // Создаем оверлей для закрытия меню при клике вне его
+  const overlay = document.createElement('div');
+  overlay.classList.add('menu-overlay');
+  document.body.appendChild(overlay);
 
-document.querySelectorAll('.fade-section').forEach(section => {
-    observer.observe(section);
-});
+  function toggleMenu() {
+    burgerMenu.classList.toggle('active');
+    burgerDropdown.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = burgerDropdown.classList.contains('active') ? 'hidden' : '';
+  }
 
-// ===== АККОРДЕОН ОПЫТА РАБОТЫ =====
-document.querySelectorAll('.accordion-header').forEach(header => {
+  function closeMenu() {
+    burgerMenu.classList.remove('active');
+    burgerDropdown.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  burgerMenu.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', closeMenu);
+
+  // Закрываем меню при клике на ссылку
+  burgerLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // =========================================
+  // 4. Accordion (Аккордеон опыта работы)
+  // =========================================
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  accordionHeaders.forEach(header => {
     header.addEventListener('click', () => {
-        const isExpanded = header.getAttribute('aria-expanded') === 'true';
-        const body = header.nextElementSibling;
-        
-        // Закрыть все другие
-        document.querySelectorAll('.accordion-header').forEach(otherHeader => {
-            if (otherHeader !== header) {
-                otherHeader.setAttribute('aria-expanded', 'false');
-                otherHeader.nextElementSibling.classList.remove('open');
-            }
-        });
-        
-        // Переключить текущий
-        header.setAttribute('aria-expanded', !isExpanded);
-        body.classList.toggle('open');
+      const isExpanded = header.getAttribute('aria-expanded') === 'true';
+      const body = header.nextElementSibling;
+
+      // Закрываем все остальные (опционально, если нужно только одно открытое)
+      // accordionHeaders.forEach(h => {
+      //   h.setAttribute('aria-expanded', 'false');
+      //   h.nextElementSibling.classList.remove('open');
+      // });
+
+      header.setAttribute('aria-expanded', !isExpanded);
+      body.classList.toggle('open');
     });
-});
+  });
 
-// ===== НАВИГАЦИОННЫЕ ТОЧКИ =====
-const sections = document.querySelectorAll('section[id]');
-const navDots = document.getElementById('navDots');
+  // =========================================
+  // 5. Scroll Animations (Анимации при скролле)
+  // =========================================
+  const fadeElements = document.querySelectorAll('.fade-section');
+  
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  };
 
-// Создание точек
-sections.forEach((section, index) => {
-    const dot = document.createElement('div');
-    dot.className = 'nav-dot';
-    dot.dataset.index = index;
-    dot.addEventListener('click', () => {
-        section.scrollIntoView({ behavior: 'smooth' });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Анимация проигрывается только один раз
+      }
     });
-    navDots.appendChild(dot);
-});
+  }, observerOptions);
 
-// Обновление активной точки при скролле
-const navDotsElements = document.querySelectorAll('.nav-dot');
+  fadeElements.forEach(el => observer.observe(el));
 
-window.addEventListener('scroll', () => {
-    let current = 0;
-    sections.forEach((section, index) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop - 300) {
-            current = index;
-        }
+  // =========================================
+  // 6. Custom Scrollbar (Кастомный скроллбар)
+  // =========================================
+  const scrollThumb = document.getElementById('scrollThumb');
+  const customScroll = document.getElementById('customScroll');
+
+  if (scrollThumb && customScroll) {
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollTop / docHeight;
+      
+      const trackHeight = 200; // Высота трека из CSS
+      const thumbHeight = 40;  // Высота ползунка из CSS
+      const maxTop = trackHeight - thumbHeight;
+      
+      scrollThumb.style.top = `${scrollPercent * maxTop}px`;
     });
-    
-    navDotsElements.forEach(dot => dot.classList.remove('active'));
-    if (navDotsElements[current]) {
-        navDotsElements[current].classList.add('active');
-    }
-});
+  }
 
-// ===== КАСТОМНЫЙ СКРОЛЛБАР =====
-const customScroll = document.getElementById('customScroll');
-const scrollThumb = document.getElementById('scrollThumb');
-
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = scrollTop / docHeight;
-    
-    const thumbHeight = Math.max(40, (window.innerHeight / docHeight) * 200);
-    const thumbTop = scrollPercent * (200 - thumbHeight);
-    
-    scrollThumb.style.height = thumbHeight + 'px';
-    scrollThumb.style.top = thumbTop + 'px';
-    
-    // Показать/скрыть скроллбар
-    if (scrollTop > 100) {
-        customScroll.classList.add('visible');
-    } else {
-        customScroll.classList.remove('visible');
-    }
-});
-
-// ===== COOKIE BANNER =====
-const cookieBanner = document.getElementById('cookieBanner');
-const cookieAccept = document.getElementById('cookieAccept');
-const cookieDetails = document.getElementById('cookieDetails');
-
-// Показать баннер, если не принимали
-if (!localStorage.getItem('cookiesAccepted')) {
-    setTimeout(() => {
-        cookieBanner.classList.add('show');
-    }, 2000);
-}
-
-cookieAccept.addEventListener('click', () => {
-    localStorage.setItem('cookiesAccepted', 'true');
-    cookieBanner.classList.remove('show');
-});
-
-cookieDetails.addEventListener('click', () => {
-    alert('Мы используем только localStorage для хранения ваших предпочтений темы. Данные не передаются на сервер.');
-});
-
-// ===== БУРГЕР-МЕНЮ (для мобильных) =====
-const burgerMenu = document.getElementById('burgerMenu');
-let menuOpen = false;
-
-burgerMenu.addEventListener('click', () => {
-    menuOpen = !menuOpen;
-    const lines = burgerMenu.querySelectorAll('.burger-line');
-    
-    if (menuOpen) {
-        lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        lines[1].style.opacity = '0';
-        lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-    } else {
-        lines[0].style.transform = 'none';
-        lines[1].style.opacity = '1';
-        lines[2].style.transform = 'none';
-    }
-});
-
-// ===== ПЛАВНЫЙ СКРОЛЛ ДЛЯ ЯКОРЕЙ =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  // =========================================
+  // 7. Smooth Scroll for Anchor Links
+  // =========================================
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     });
+  });
 });
-
-// ===== ОБНОВЛЕНИЕ ЛЕТ ОПЫТА =====
-function updateExperienceYears() {
-    const startDate = new Date('2023-09-01'); // Сентябрь 2023
-    const today = new Date();
-    const years = today.getFullYear() - startDate.getFullYear();
-    const months = today.getMonth() - startDate.getMonth();
-    
-    let experienceYears = years;
-    if (months < 0 || (months === 0 && today.getDate() < startDate.getDate())) {
-        experienceYears--;
-    }
-    
-    const experienceElements = [
-        document.getElementById('experienceYears'),
-        document.getElementById('aboutExperienceYears'),
-        document.getElementById('statExperience'),
-        document.getElementById('footerExperience')
-    ];
-    
-    experienceElements.forEach(el => {
-        if (el) {
-            el.textContent = experienceYears + '+';
-        }
-    });
-}
-
-updateExperienceYears();
-
-// ===== ПАРАЛЛАКС ЭФФЕКТ ДЛЯ BLOBS =====
-let mouseX = 0;
-let mouseY = 0;
-
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX / window.innerWidth;
-    mouseY = e.clientY / window.innerHeight;
-    
-    const blobs = document.querySelectorAll('.glass-blob');
-    blobs.forEach((blob, index) => {
-        const speed = (index + 1) * 0.5;
-        const x = (mouseX - 0.5) * speed * 20;
-        const y = (mouseY - 0.5) * speed * 20;
-        
-        blob.style.transform = `translate(${x}px, ${y}px)`;
-    });
-});
-
-// ===== КОНСОЛЬНОЕ СООБЩЕНИЕ =====
-console.log('%c🚀 Светлана Кулакова - QA Engineer', 'font-size: 20px; color: #6366f1; font-weight: bold;');
-console.log('%cСайт создан с ❤️ для демонстрации навыков', 'font-size: 14px; color: #10b981;');
