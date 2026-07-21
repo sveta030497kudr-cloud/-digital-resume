@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function setLanguage(lang) {
-    const elements = document.querySelectorAll('[data-ru][data-en]');
-    elements.forEach(el => {
-      el.textContent = el.getAttribute(`data-${lang}`);
-    });
+  const elements = document.querySelectorAll('[data-ru][data-en]');
+  elements.forEach(el => {
+    el.innerHTML = el.getAttribute(`data-${lang}`);  // ✅ Стало
+  });
 
     // Обновляем кнопку языка
     if (lang === 'ru') {
